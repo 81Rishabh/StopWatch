@@ -6,6 +6,9 @@ const stopBtn = document.getElementById("stop");
 const resetBtn = document.getElementById("reset");
 const container = document.querySelector(".container");
 
+min.innerText = "00";
+sec.innerText = "00";
+miliSecond.innerText = "00";
 
 
 let interval;
@@ -30,7 +33,6 @@ function reset() {
     min.innerText = "00";
     sec.innerText = "00";
     miliSecond.innerText = "00";
-
   if (isIntervalCleared) {
     (intialtime = 0), (intialMin = 1), (intialSec = 0);
   } else {
@@ -40,7 +42,6 @@ function reset() {
 }
 
 // reset function invoke
-reset();
 
 // start watch
 function startTime() {
