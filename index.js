@@ -6,16 +6,7 @@ const stopBtn = document.getElementById("stop");
 const resetBtn = document.getElementById("reset");
 const container = document.querySelector(".container");
 
-// set time before initalTime while initialTime < 10
-function timeWithBeforeZero(intialtime) {
-  var TimeWithBeforeZero;
-  if (intialtime < 10) {
-    TimeWithBeforeZero = "0" + intialtime;
-  } else {
-    TimeWithBeforeZero = intialtime;
-  }
-  return TimeWithBeforeZero;
-}
+
 
 let interval;
 var intialtime = 0;
@@ -23,19 +14,31 @@ var intialSec = 0;
 var intialMin = 1;
 let isIntervalCleared = false;
 
+// set time before initalTime while initialTime < 10
+function timeWithBeforeZero(intialtime) {
+    var TimeWithBeforeZero;
+    if (intialtime < 10) {
+      TimeWithBeforeZero = "0" + intialtime;
+    } else {
+      TimeWithBeforeZero = intialtime;
+    }
+    return TimeWithBeforeZero;
+  }
 
 // reset stop watch as intitial state
 function reset() {
     min.innerText = "00";
     sec.innerText = "00";
     miliSecond.innerText = "00";
+
   if (isIntervalCleared) {
-    (intialtime = 0), (intialMin = 0), (intialSec = 0);
+    (intialtime = 0), (intialMin = 1), (intialSec = 0);
   } else {
     clearInterval(interval);
-    (intialtime = 0), (intialMin = 0), (intialSec = 0);
+    (intialtime = 0), (intialMin = 1), (intialSec = 0);
   }
 }
+
 // reset function invoke
 reset();
 
